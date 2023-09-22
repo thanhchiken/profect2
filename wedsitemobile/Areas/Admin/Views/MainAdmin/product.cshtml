@@ -1,0 +1,63 @@
+﻿@model IEnumerable<wedsitemobile.Models.SanPham>
+
+@{
+    ViewBag.Title = "product";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<h2>product</h2>
+
+<p>
+    @Html.ActionLink("tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaSanPham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNhaSanXuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSanPham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CauHinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhChinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaSanPham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNhaSanXuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSanPham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CauHinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhChinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.MaSanPham  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.MaSanPham  })
+        </td>
+    </tr>
+}
+
+</table>

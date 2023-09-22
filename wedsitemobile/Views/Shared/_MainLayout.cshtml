@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewBag.Title = "_MainLayout";
+
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free Bootstrap Themes by Zerotheme dot com - Free Responsive Html5 Templates">
+    <meta name="author" content="https://www.Zerotheme.com">
+
+    <title>Mobile Shop</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="~/Asset/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Asset/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="~/Asset/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Asset/fonts/font-slider.css" type="text/css">
+
+    <!-- jQuery and Modernizr-->
+    <script src="~/Asset/js/jquery-2.1.1.js"></script>
+
+    <!-- Core JavaScript Files -->
+    <script src="~/Asset/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!--Top-->
+    <nav id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <select class="language">
+                        <option value="English" selected>English</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                    <select class="currency">
+                        <option value="USD" selected>USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="DDD">DDD</option>
+                    </select>
+                </div>
+                <div class="col-xs-6">
+                    <ul class="top-link">
+                        @if (Session["idUser"] != null)
+                        {
+                            <li><a href="~/Shop/Logout">log out</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="~/Shop/Register">Sing up</a></li>
+                            <li><a href="~/Shop/Login">Log in</a></li>
+
+
+                        }
+                            <li><a href="account.html"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Header-->
+    <header class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="logo"><img src="~/Asset/images/logocellphones.png" /></div>
+            </div>
+            <div class="col-md-4">
+                <form class="form-search">
+                    <input type="text" class="input-medium search-query">
+                    <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div id="cart"><a class="btn btn-1" href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span>CART : 0 ITEM</a></div>
+            </div>
+        </div>
+    </header>
+    <!--Navigation-->
+    <nav style="background: #950000" id="menu" class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <span id="heading" class="visible-xs">Categories</span>
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Products", "Index", "Shop")
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--//////////////////////////////////////////////////-->
+    <!--///////////////////HomePage///////////////////////-->
+    <!--//////////////////////////////////////////////////-->
+    @RenderBody()
+    <footer style="background: #731d1d">
+        <div class="container">
+            <div class="wrap-footer">
+                <div class="row">
+                    <div class="col-md-3 col-footer footer-1">
+                        <img src="~/Asset/images/logocellphonesfooter.png" />
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    </div>
+                    <div class="col-md-3 col-footer footer-2">
+                        <div class="heading"><h4>Customer Service</h4></div>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Delivery Information</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-footer footer-3">
+                        <div class="heading"><h4>My Account</h4></div>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Brands</a></li>
+                            <li><a href="#">Gift Vouchers</a></li>
+                            <li><a href="#">Specials</a></li>
+                            <li><a href="#">Site Map</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-footer footer-4">
+                        <div class="heading"><h4>Contact Us</h4></div>
+                        <ul>
+                            <li><span class="glyphicon glyphicon-home"></span>California, United States 3000009</li>
+                            <li><span class="glyphicon glyphicon-earphone"></span>+91 8866888111</li>
+                            <li><span class="glyphicon glyphicon-envelope"></span>infor@yoursite.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
